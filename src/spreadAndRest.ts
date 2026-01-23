@@ -11,3 +11,10 @@ const otherInfo = { hobby: 'Coding', profession: 'Web Developer', location: 'Ban
 
 const developerInfo = { ...developer, ...otherInfo };
 console.log('Developer Info:', developerInfo);
+
+// Rest Operator
+const inviteFriends = (...friends: string[]): void => {
+    friends.forEach(friend => console.log('Inviting: ', friend));
+}
+
+inviteFriends('Arif', 'Tanzid', 'Samiul', 'Hasan', 'Khalid');
