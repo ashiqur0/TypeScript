@@ -1,5 +1,6 @@
 // Interface Type: Similar as Type Alias. Use for non-primitive types like object, array, function, class
 
+// Interface with Object Type
 interface User {
     name: string;
     age: number;
@@ -26,3 +27,9 @@ const user1: UserWithRole = {
 };
 
 console.log(user1.getDetails());
+
+// Interface with Array Type
+interface Friends {
+    [index: number]: string; // index signature
+}
+const friendList: Friends = ['Arif', 'Tanzid', 'Samiul'];
