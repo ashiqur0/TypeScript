@@ -16,3 +16,19 @@ const getUserName = (name: string | null | undefined): string => {
 console.log(getUserName('Alice')); // Alice
 console.log(getUserName(null));    // Guest User
 console.log(getUserName(undefined)); // Guest User
+
+// Example usage of the optional chaining operator
+const user: {
+    address: {
+        city: string;
+        town?: string;
+        postalCode: string;
+    }
+} = {
+    address: {
+        city: 'Bogura',
+        postalCode: '5800'
+    }
+}
+
+console.log(user.address);
