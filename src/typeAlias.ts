@@ -67,3 +67,11 @@ const adminName: Name = 'Ashiqur Rahman';
 
 console.log(`Is Admin: ${isAdmin}`);
 console.log(`Admin Name: ${adminName}`);
+
+// Type Alias for function type
+type AddFunction = (num1: number, num2: number) => number;
+
+const add: AddFunction = (number1, number2) => number1 + number2;
+
+const sum = add(15, 25);
+console.log(`Sum: ${sum}`);
