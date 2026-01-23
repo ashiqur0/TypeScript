@@ -1,4 +1,4 @@
-// Type Alias
+// Type Alias: Make  user define data types with type alias
 
 // Type Alias for a complex user object
 type User = {
@@ -57,3 +57,13 @@ const user2: User = {
 
 console.log(user1);
 console.log(user2);
+
+// Type Alias for boolean or string values
+type IsAdmin = true;
+const isAdmin: IsAdmin = true;
+
+type Name = string;
+const adminName: Name = 'Ashiqur Rahman';
+
+console.log(`Is Admin: ${isAdmin}`);
+console.log(`Admin Name: ${adminName}`);
