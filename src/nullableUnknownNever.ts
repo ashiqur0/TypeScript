@@ -34,8 +34,12 @@ const throwError = (message: string): never => {
     throw new Error(message);
 }
 
+type CustomError = {
+    message: string;
+}
+
 try {
     throwError("This is a critical error!");
 } catch (error) {
-    console.error(error.message);
+    console.error((error as CustomError).message); // type assertion (as)
 }
