@@ -11,3 +11,20 @@ const getUser = (user: string | null): void => {
 
 getUser("Alice"); // Valid call
 getUser(null); // Valid call
+
+// Unknown Type
+const discountCalculator = (input: unknown): void => {
+    if (typeof input === "number") {
+        const discount = input * 0.1;
+        console.log(`Discount: $${discount}`);
+    } else if (typeof input === "string") {
+        const discount = Number(input.split(' ')[0]) * 0.1;
+        console.log(`Discount: $${discount}`);
+    } else {
+        console.log("Invalid input type for discount calculation.");
+    }
+}
+
+discountCalculator(200);
+discountCalculator("150 Tk");
+discountCalculator(null); // Invalid input type
