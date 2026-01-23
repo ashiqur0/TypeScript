@@ -28,3 +28,14 @@ const discountCalculator = (input: unknown): void => {
 discountCalculator(200);
 discountCalculator("150 Tk");
 discountCalculator(null); // Invalid input type
+
+// Never Type: never return anything
+const throwError = (message: string): never => {
+    throw new Error(message);
+}
+
+try {
+    throwError("This is a critical error!");
+} catch (error) {
+    console.error(error.message);
+}
