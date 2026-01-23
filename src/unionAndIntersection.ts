@@ -20,3 +20,27 @@ console.log(getUserPermissions('admin'));      // Full access granted.
 console.log(getUserPermissions('moderator'));  // Limited access granted.
 console.log(getUserPermissions('user'));       // Basic access granted.
 console.log(getUserPermissions('guest' as UserRole)); // No access granted.
+
+// Intersection Type Example: combining multiple types
+type Employee = {
+    id: number;
+    name: string;
+    phoneNo: string;
+}
+
+type Manager = {
+    designation: string;
+    teamSize: number;
+}
+
+type ManagementEmployee = Employee & Manager;
+
+const manager: ManagementEmployee = {
+    id: 1,
+    name: 'Alice Johnson',
+    phoneNo: '123-456-7890',
+    designation: 'Project Manager',
+    teamSize: 10
+};
+
+console.log(manager);
