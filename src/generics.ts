@@ -19,3 +19,12 @@ const userList: GenericArray<{ name: string; age: number }> = [
     { name: 'Samiul', age: 24 },
 ];
 console.log(userList);
+
+// Generic Tuple
+type GenericTuple<X, Y> = [X, Y];
+
+const user: GenericTuple<string, number> = ['Arif', 29];
+const userInfo: GenericTuple<object, string> = [{ name: 'Tanzid', age: 22 }, 'Active'];
+
+console.log(user);
+console.log(userInfo);
