@@ -11,3 +11,11 @@ const eligibilities: GenericArray<boolean> = [true, false, false];
 console.log(names);
 console.log(numbers);
 console.log(eligibilities);
+
+// Generic Array of Objects
+const userList: GenericArray<{ name: string; age: number }> = [
+    { name: 'Arif', age: 29 },
+    { name: 'Tanzid', age: 22 },
+    { name: 'Samiul', age: 24 },
+];
+console.log(userList);
