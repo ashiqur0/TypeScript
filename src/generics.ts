@@ -28,3 +28,30 @@ const userInfo: GenericTuple<object, string> = [{ name: 'Tanzid', age: 22 }, 'Ac
 
 console.log(user);
 console.log(userInfo);
+
+// Generic Function
+function getSearchProducts<T>(products: T[]): T {
+    // Do some database operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+
+const getMoreSearchProducts = <T>(products: T[]): T => {
+    const myIndex = 4;
+    return products[myIndex];
+};
+
+const result1 = getSearchProducts<string>(['Laptop', 'Mobile', 'Tablet', 'Monitor', 'Keyboard']);
+const result2 = getMoreSearchProducts<number>([10, 20, 30, 40, 50, 60]);
+
+console.log(result1);
+console.log(result2);
+
+// Generic Function with multiple type parameters
+function displayType<X, Y>(param1: X, param2: Y): void {
+    console.log(`Type of param1: ${typeof param1}, Value: ${param1}`);
+    console.log(`Type of param2: ${typeof param2}, Value: ${param2}`);
+}
+
+displayType<string, number>('Hello', 100);
+displayType<boolean, object>(true, { key: 'value' });
