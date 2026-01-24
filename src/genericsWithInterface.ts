@@ -1,6 +1,6 @@
 // Generic with Interface
 
-interface Developer<T, X> {
+interface Developer<T, X = null> {
     name: string;
     salary: number;
     device: {
@@ -54,4 +54,15 @@ const developer2: Developer<AdvancedWatch, Bike> = {
     },
     smartWatch: { heartRate: 72, stopWatch: true, call: true, calculator: true, ai: true },
     bike: { brand: 'Kawasaki', model: 'Ninja800', engineCapacity: '250cc' }
+}
+
+const developer3: Developer<AppleWatch> = {
+    name: 'Arif Hasan',
+    salary: 150000,
+    device: {
+        brand: 'Apple',
+        model: 'MacBook Pro',
+        releaseYear: 2026,
+    },
+    smartWatch: { heartRate: 72, stopWatch: true, call: true, calculator: true },
 }
