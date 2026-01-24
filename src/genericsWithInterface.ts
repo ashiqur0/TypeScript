@@ -1,6 +1,6 @@
 // Generic with Interface
 
-interface Developer<T> {
+interface Developer<T, X> {
     name: string;
     salary: number;
     device: {
@@ -9,6 +9,7 @@ interface Developer<T> {
         releaseYear: number;
     };
     smartWatch: T;
+    bike?: X;
 }
 
 interface NormalWatch {
@@ -16,7 +17,13 @@ interface NormalWatch {
     stopWatch: boolean
 }
 
-const developer1: Developer<NormalWatch> = {
+interface Bike {
+    brand: string,
+    model: string,
+    engineCapacity: string
+}
+
+const developer1: Developer<NormalWatch, Bike> = {
     name: 'Tanzid Mondol',
     salary: 50000,
     device: {
@@ -25,6 +32,7 @@ const developer1: Developer<NormalWatch> = {
         releaseYear: 2020,
     },
     smartWatch: { heartRate: 72, stopWatch: true },
+    bike: { brand: 'Yamaha', model: 'R15', engineCapacity: '150cc' }
 }
 
 interface AppleWatch extends NormalWatch {
@@ -36,7 +44,7 @@ interface AdvancedWatch extends AppleWatch {
     ai: boolean
 }
 
-const developer2: Developer<AdvancedWatch> = {
+const developer2: Developer<AdvancedWatch, Bike> = {
     name: 'Samiul Islam',
     salary: 150000,
     device: {
@@ -45,4 +53,5 @@ const developer2: Developer<AdvancedWatch> = {
         releaseYear: 2026,
     },
     smartWatch: { heartRate: 72, stopWatch: true, call: true, calculator: true, ai: true },
+    bike: { brand: 'Kawasaki', model: 'Ninja800', engineCapacity: '250cc' }
 }
