@@ -88,3 +88,26 @@ const person1 = new Person("John Doe");
 getUserInfo2(student1); // Output: Mr. Jack is studying for 5 hours.
 getUserInfo2(teacher1); // Output: Miss. Jenny is teaching for 4 hours.
 getUserInfo2(person1);  // Output: John Doe is sleeping for 8 hours.
+
+// Function Guard: to check if a variable is a function before calling it
+const isStudent = (user: Person) => {
+    return user instanceof Student;
+}
+
+const isTeacher = (user: Person) => {
+    return user instanceof Teacher;
+}
+
+const handleUser = (user: Person) => {
+    if (isStudent(user)) {
+        user.doStudy(3);
+    } else if (isTeacher(user)) {
+        user.takeClass(2);
+    } else {
+        user.getSleep(6);
+    }
+}
+
+handleUser(student1); // Output: Mr. Jack is studying for 3 hours.
+handleUser(teacher1); // Output: Miss. Jenny is teaching for 2 hours.
+handleUser(person1);  // Output: John Doe is sleeping for 6 hours.
