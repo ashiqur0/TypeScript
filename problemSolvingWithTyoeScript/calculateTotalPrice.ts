@@ -5,7 +5,7 @@ type Products = {
     quantity: number,
     discount?: number
 }
-
+ 
 const calculateTotalPrice = (products: Products[]): number => {
     return products.reduce((acc, prod) => {
         const price = prod.price * prod.quantity
