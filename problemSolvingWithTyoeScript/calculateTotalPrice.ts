@@ -15,7 +15,7 @@ const calculateTotalPrice = (products: Products[]): number => {
             acc = price;
         }
 
-        return acc;
+        return acc; 
     }, 0);
 }
 
